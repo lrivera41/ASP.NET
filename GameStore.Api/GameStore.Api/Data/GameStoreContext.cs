@@ -14,11 +14,11 @@ public class GameStoreContext(DbContextOptions<GameStoreContext> options)
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Genre>().HasData(
-            new Genre { Id = 1, Name = "Action" },
-            new Genre { Id = 2, Name = "Adventure" },
-            new Genre { Id = 3, Name = "RPG" },
-            new Genre { Id = 4, Name = "Strategy" },
-            new Genre { Id = 5, Name = "Simulation" }
+            new Genre { Id = 1, Name = "Fighting" },
+            new Genre { Id = 2, Name = "Roleplaying" },
+            new Genre { Id = 3, Name = "Sports" },
+            new Genre { Id = 4, Name = "Racing" },
+            new Genre { Id = 5, Name = "Kids and Family" }
         );
     }
 }

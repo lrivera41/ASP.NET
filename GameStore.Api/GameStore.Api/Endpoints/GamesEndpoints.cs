@@ -63,7 +63,14 @@ public static class GamesEndpoints
             dbContext.Games.Add(game);
             dbContext.SaveChanges();
 
-            return Results.CreatedAtRoute(GateGameEndpointName, new { id = game.Id }, game);
+            GameDto gameDto = new GameDto(
+                game.Id,
+                game.Name,
+                game.Genre!.Name,
+                game.Price,
+                game.ReleaseDate);
+
+            return Results.CreatedAtRoute(GateGameEndpointName, new { id = game.Id }, gameDto);
         });
 
         // PUT /games/1
